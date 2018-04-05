@@ -1,0 +1,119 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 ng3
+022-023 tr3
+024-025 ch3
+026-027 dv3
+028-029 tr
+02A-02B ch
+02C-02D dv
+02E-02F d
+030-031 VT
+032-033 time
+034-035 a
+036-037 i
+038.0   TT
+039     CAPDO
+03A     @TRIS_C
+03B-03C @ITOF.P1
+03B     @delay_ms1.P2
+03B     @MUL88.P3
+03B     LCD_COMMAND.MDK
+03B-03E @SFTOI.P1
+03B     giaima_lcd.@SCRATCH1
+03B     @PSTRINGC7_637.@SCRATCH1
+03B     CAM_BIEN_HOAT_DONG.@SCRATCH1
+03B     KT_PHIM.@SCRATCH1
+03B     MAIN.@SCRATCH1
+03C     @MUL88.P1
+03C     giaima_lcd.@SCRATCH2
+03C     @PSTRINGC7_637.@SCRATCH2
+03C     CAM_BIEN_HOAT_DONG.@SCRATCH2
+03D-03E @DIV1616.P1
+03D     @PSTRINGC7_637.@SCRATCH3
+03D     CAM_BIEN_HOAT_DONG.@SCRATCH3
+03E     LCD_DATA.MHT
+03E     @PSTRINGC7_637.@SCRATCH4
+03E     CAM_BIEN_HOAT_DONG.@SCRATCH4
+03F-040 @DIV1616.P1
+03F-042 @MULFF.P2
+041     @DIV1616.@SCRATCH1
+043-046 @MULFF.P1
+047     @MULFF.@SCRATCH1
+048     @MULFF.@SCRATCH2
+049     @MULFF.@SCRATCH3
+04A     @MULFF.@SCRATCH4
+04B     @MULFF.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const645.call
+00000D  @const648.call
+000016  @const650.call
+00001F  LCD_COMMAND
+00003D  @delay_ms1
+000051  LCD_SETUP
+000072  @MUL88
+000099  KT_PHIM
+0000B0  @DIV1616
+0000D5  @MULFF
+00014A  CAM_BIEN_HOAT_DONG
+00018B  @ITOF
+0001EC  @SFTOI
+000214  giaima_lcd
+0002ED  LCD_DATA
+00030B  @PSTRINGC7_637
+000361  ht_lcd
+000387  HT_LCD_START
+000394  HT_LCD_STOP
+0003A1  MAIN
+0003A1  @cinit1
+0003B7  @cinit2
+
+Project Directory:
+    C:\Users\Windows\Desktop\New folder\
+
+Project Files:
+    pic.c                                                   [05-Apr-18 19:17  CRC=8852986F]
+    TV_16f887.c                                             [21-May-17 14:36  CRC=D872A938]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16F887.H   [12-Nov-13 14:35  CRC=6CB1A611]
+    TV_LCD.c                                                [05-Apr-18 19:17  CRC=DAF161E1]
+
+Source signature=8359AB7A
+
+Units:
+    pic (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   pic.xsym
+    Errors:      pic.err
+    Ext Symbols: pic.esym
+    INHX8:       pic.hex
+    Symbols:     pic.sym
+    List:        pic.lst
+    Debug/COFF:  pic.cof
+    Project:     pic.ccspjt
+    Call Tree:   pic.tre
+    Statistics:  pic.STA

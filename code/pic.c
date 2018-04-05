@@ -1,0 +1,102 @@
+#INCLUDE "C:\Users\Windows\Desktop\New folder\TV_16f887.c"
+#INCLUDE "C:\Users\Windows\Desktop\New folder\TV_LCD.c"
+#DEFINE LED1 PIN_B0
+#DEFINE LED2 PIN_B1
+#DEFINE ON PIN_B4
+#DEFINE TRIG PIN_A1     
+#DEFINE ECHO PIN_A0 
+UNSIGNED INT1 TT=1;
+UNSIGNED INT8 CAPDO=0;
+
+VOID CAM_BIEN_HOAT_DONG()
+{               
+                     OUTPUT_HIGH(PIN_A1);                         
+                     DELAY_US(15);                            
+                     OUTPUT_LOW(PIN_A1);                
+                     WHILE(!INPUT(ECHO))              
+                     {} 
+                     SET_TIMER1(0);                           
+                     WHILE(INPUT(ECHO))                
+                     {} 
+                     TIME=GET_TIMER1();                      
+                     A=TIME/58 +1 ;            
+                     D=15-A;            
+                     VT=D*3.14*4*4;   
+                     DELAY_MS(50);
+}
+
+VOID KT_PHIM()
+{
+      IF(INPUT(ON) == 0)
+      {
+           DELAY_MS(20);
+           IF(INPUT(ON) == 0)
+           {
+               TT=~TT;                                             
+               WHILE(!INPUT(ON));
+           }
+      }
+}
+
+VOID MAIN()
+{
+      SET_TRIS_B(0XF0);
+      SET_TRIS_D(0X00);
+      SET_TRIS_E(0X00);
+      LCD_SETUP();
+      TT=1;          
+      SETUP_TIMER_1(T1_INTERNAL|T1_DIV_BY_8);           
+      SET_TRIS_C(0X00);
+      SETUP_TIMER_2(T2_DIV_BY_16,249,1);
+      SETUP_CCP1(CCP_PWM);  
+      SETUP_CCP2(CCP_PWM);
+      SET_PWM1_DUTY(CAPDO*10);
+      SET_PWM2_DUTY(0);  
+      SETUP_TIMER_0(T0_INTERNAL|T0_DIV_8);
+      SET_TIMER0(3036);
+      ENABLE_INTERRUPTS(INT_TIMER0);
+      ENABLE_INTERRUPTS(GLOBAL);
+      WHILE(TRUE)
+      {        
+         KT_PHIM();
+         CAM_BIEN_HOAT_DONG();
+         GIAIMA_LCD();
+         HT_LCD();
+         IF (TT==1)
+         {
+               HT_LCD_START();
+               OUTPUT_HIGH(PIN_B0);           
+               OUTPUT_LOW(PIN_B1);            
+               SET_PWM1_DUTY(4*10);
+               IF(D>=15)
+               {
+                  FOR(I=0;I<4;I++)
+                  {
+                        OUTPUT_LOW(PIN_B0); 
+                        DELAY_MS(70);
+                        OUTPUT_HIGH(PIN_B0);
+                        DELAY_MS(70);                    
+                  }                          
+                  HT_LCD_STOP();
+                  SET_PWM1_DUTY(0);
+                  TT=0;
+               }
+         }
+         ELSE 
+         {
+               HT_LCD_STOP();
+               OUTPUT_HIGH(PIN_B1);            
+               OUTPUT_LOW(PIN_B0);
+               SET_PWM1_DUTY(0);
+               IF (D<=3)
+               {
+                     HT_LCD_START();
+                     OUTPUT_HIGH(PIN_B0);           
+                     OUTPUT_LOW(PIN_B1);           
+                     SET_PWM1_DUTY(4*10);
+                     TT=1;
+               }
+         }
+      }
+}
+

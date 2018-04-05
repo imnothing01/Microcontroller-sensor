@@ -1,0 +1,70 @@
+ÀÄpic
+   ÀÄMAIN  0/177  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄLCD_SETUP  0/33  Ram=0
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄLCD_COMMAND  0/30  Ram=1
+      ÃÄ@MUL88  0/39  Ram=2
+      ÃÄKT_PHIM  0/23  Ram=1
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄCAM_BIEN_HOAT_DONG  0/202  Ram=4
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@ITOF  (Inline)  Ram=2
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@SFTOI  (Inline)  Ram=4
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄgiaima_lcd  0/217  Ram=2
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÀÄ@DIV1616  0/37  Ram=5
+      ÃÄht_lcd  0/38  Ram=0
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄ@PSTRINGC7_637  0/86  Ram=4
+      ³  ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ³  ÀÄLCD_DATA  0/30  Ram=1
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ÃÄLCD_DATA  0/30  Ram=1
+      ³  ÀÄLCD_DATA  0/30  Ram=1
+      ÃÄHT_LCD_START  0/13  Ram=0
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄ@PSTRINGC7_637  0/86  Ram=4
+      ³  ³  ÀÄ*
+      ³  ÃÄgiaima_lcd  0/217  Ram=2
+      ³  ³  ÀÄ*
+      ³  ÀÄht_lcd  0/38  Ram=0
+      ³     ÀÄ*
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄHT_LCD_STOP  0/13  Ram=0
+      ³  ÃÄLCD_COMMAND  0/30  Ram=1
+      ³  ÃÄ@PSTRINGC7_637  0/86  Ram=4
+      ³  ³  ÀÄ*
+      ³  ÃÄgiaima_lcd  0/217  Ram=2
+      ³  ³  ÀÄ*
+      ³  ÀÄht_lcd  0/38  Ram=0
+      ³     ÀÄ*
+      ÃÄHT_LCD_STOP  0/13  Ram=0
+      ³  ÀÄ*
+      ÀÄHT_LCD_START  0/13  Ram=0
+         ÀÄ*
